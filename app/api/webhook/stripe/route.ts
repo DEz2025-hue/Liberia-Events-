@@ -8,6 +8,14 @@ const webhookSecret = process.env.STRIPE_WEBHOOK_SECRET!
 
 export async function POST(request: NextRequest) {
   try {
+    // Check if Stripe is configured
+    if (!stripe) {
+      return NextResponse.json(
+        { error: 'Payment processing is not configured' },
+        { status: 500 }
+      )
+    }
+
     const body = await request.text()
     const headersList = headers()
     const signature = headersList.get('stripe-signature')!

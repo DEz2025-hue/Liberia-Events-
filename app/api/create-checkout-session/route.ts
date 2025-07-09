@@ -6,6 +6,14 @@ import { CONCERT_CONFIG } from '@/lib/concert-config'
 
 export async function POST(request: NextRequest) {
   try {
+    // Check if Stripe is configured
+    if (!stripe) {
+      return NextResponse.json(
+        { error: 'Payment processing is not configured' },
+        { status: 500 }
+      )
+    }
+
     const { name, email } = await request.json()
 
     if (!name || !email) {
