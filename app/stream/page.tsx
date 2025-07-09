@@ -142,7 +142,10 @@ export default function StreamPage() {
         console.error('Error fetching stream settings:', streamError)
         setStreamSettings({ isLive: false, streamUrl: null })
       } else {
-        setStreamSettings(streamData)
+        setStreamSettings({
+          isLive: streamData.is_live,
+          streamUrl: streamData.stream_url
+        })
       }
 
       setTokenValidation({ 
@@ -324,7 +327,7 @@ export default function StreamPage() {
               <h2 className="text-2xl font-bold mb-4">Stream Starting Soon</h2>
               <p className="text-gray-300 mb-6 max-w-md">
                 The live stream will begin shortly before the concert starts. 
-                Keep this page open and we'll automatically connect you when we go live.
+                Keep this page open and we&apos;ll automatically connect you when we go live.
               </p>
               <div className="flex items-center justify-center gap-2 text-sm text-gray-400">
                 <Clock className="w-4 h-4" />
@@ -357,7 +360,7 @@ export default function StreamPage() {
 
       {/* Footer */}
       <div className="bg-black p-4 text-center text-sm text-gray-400">
-        <p>🇱🇷 Liberia First, Liberia Last • We're doing this one for the Culture</p>
+        <p>🇱🇷 Liberia First, Liberia Last • We&apos;re doing this one for the Culture</p>
       </div>
     </div>
   )
