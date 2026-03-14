@@ -1,172 +1,236 @@
-# 🇱🇷 Liberia Events - Concert Streaming Platform
+iberia Events – Concert Streaming Platform
 
-A modern, full-stack web application for streaming Liberian concerts to the global diaspora community.
+Liberia Events is a full-stack web application designed to stream Liberian concerts to people around the world, especially members of the Liberian diaspora who may not be able to attend events in person.
 
-## 🎵 Live Demo
+The platform allows users to purchase access to a live concert and watch the stream securely from their device. It also includes an admin dashboard for managing sales, access tokens, and stream settings.
 
-**Production URL:** [https://events-liberia-5dxggwcko-dez2025-hues-projects.vercel.app](https://events-liberia-5dxggwcko-dez2025-hues-projects.vercel.app)
+Live Demo
 
-## ✨ Features
+Production URL:
+https://events-liberia-5dxggwcko-dez2025-hues-projects.vercel.app
 
-### 🎫 **E-commerce & Payments**
-- Secure Stripe payment processing
-- Token-based access control
-- One-device security per ticket
-- Email confirmations and reminders
+Features
+Payments and Ticket Access
 
-### 🎥 **Live Streaming Platform**
-- HD quality live stream delivery
-- Mobile and desktop compatible
-- Real-time stream management
-- Secure access token validation
+The platform uses Stripe to handle secure payments.
+After purchasing a ticket, users receive a unique token that allows them to access the stream.
 
-### 👨‍💼 **Admin Dashboard**
-- Sales analytics and reporting
-- User management and token control
-- Live stream status management
-- Data export capabilities
+Key features include:
 
-### 🎨 **Design & UX**
-- Patriotic Liberian red & white theme
-- Responsive design for all devices
-- Modern UI with Radix components
-- Accessibility compliant
+Secure payment processing
 
-## 🛠️ Tech Stack
+Token-based stream access
 
-- **Frontend:** Next.js 13+ (App Router)
-- **Styling:** Tailwind CSS
-- **UI Components:** Radix UI
-- **Database:** Supabase (PostgreSQL)
-- **Payments:** Stripe
-- **Analytics:** Vercel Analytics
-- **Deployment:** Vercel
-- **Language:** TypeScript
+One-device security per ticket
 
-## 🚀 Getting Started
+Email confirmations and reminders
 
-### Prerequisites
-- Node.js 18+
-- npm or yarn
-- Supabase account
-- Stripe account
+Live Streaming
 
-### Installation
+The application provides a simple and secure way for viewers to watch concerts online.
 
-1. **Clone the repository**
-   ```bash
-   git clone https://github.com/DEz2025-hue/Liberia-Events-.git
-   cd Liberia-Events-
-   ```
+Features include:
 
-2. **Install dependencies**
-   ```bash
-   npm install
-   ```
+High-quality live video streaming
 
-3. **Set up environment variables**
-   Create a `.env.local` file:
-   ```env
-   STRIPE_SECRET_KEY=sk_test_your_stripe_secret_key
-   STRIPE_WEBHOOK_SECRET=whsec_your_webhook_secret
-   NEXT_PUBLIC_SUPABASE_URL=https://your-project.supabase.co
-   NEXT_PUBLIC_SUPABASE_ANON_KEY=your_supabase_anon_key
-   NEXT_PUBLIC_BASE_URL=http://localhost:3000
-   NEXT_PUBLIC_ADMIN_PASSWORD=Liberia@26
-   ```
+Compatibility with both mobile and desktop devices
 
-4. **Run the development server**
-   ```bash
-   npm run dev
-   ```
+Secure token validation before allowing access
 
-5. **Open your browser**
-   Navigate to [http://localhost:3000](http://localhost:3000)
+Real-time stream control from the admin panel
 
-## 📁 Project Structure
+Admin Dashboard
 
-```
-├── app/                    # Next.js App Router
-│   ├── admin/             # Admin dashboard
-│   ├── api/               # API routes
-│   ├── checkout/          # Payment page
-│   ├── stream/            # Live stream viewer
-│   └── success/           # Payment confirmation
-├── components/            # Reusable UI components
-├── lib/                   # Utilities and configurations
-├── supabase/              # Database migrations
-└── hooks/                 # Custom React hooks
-```
+Administrators can manage the event and monitor sales through a dedicated dashboard.
 
-## 🎯 Key Pages
+Capabilities include:
 
-- **Homepage** (`/`) - Main landing page with event details
-- **Checkout** (`/checkout`) - Payment form and order summary
-- **Stream** (`/stream?token=xxx`) - Live stream viewer
-- **Success** (`/success`) - Payment confirmation
-- **Admin** (`/admin`) - Event management dashboard
+Viewing ticket sales and analytics
 
-## 🔧 Configuration
+Managing users and stream tokens
 
-### Concert Details
-Edit `lib/concert-config.ts` to update:
-- Event name and artist
-- Date, time, and venue
-- Pricing and description
-- SEO metadata
+Controlling the live stream status
 
-### Database Schema
-The application uses three main tables:
-- `purchases` - Customer purchase records
-- `token_usage` - Access token tracking
-- `stream_settings` - Live stream configuration
+Exporting event data
 
-## 🚀 Deployment
+Design
 
-### Vercel (Recommended)
-1. Connect your GitHub repository to Vercel
-2. Add environment variables in Vercel dashboard
-3. Deploy automatically on every push
+The interface is clean, responsive, and inspired by Liberia’s national colors.
 
-### Manual Deployment
-```bash
+Responsive layout for all screen sizes
+
+Modern UI components using Radix UI
+
+Styled with Tailwind CSS
+
+Built with accessibility in mind
+
+Tech Stack
+
+Frontend: Next.js (App Router)
+
+Styling: Tailwind CSS
+
+UI Components: Radix UI
+
+Database: Supabase (PostgreSQL)
+
+Payments: Stripe
+
+Analytics: Vercel Analytics
+
+Deployment: Vercel
+
+Language: TypeScript
+
+Getting Started
+Prerequisites
+
+Before running the project locally, make sure you have:
+
+Node.js 18 or later
+
+npm or yarn
+
+A Supabase account
+
+A Stripe account
+
+Installation
+
+Clone the repository:
+
+git clone https://github.com/DEz2025-hue/Liberia-Events-.git
+cd Liberia-Events-
+
+
+Install dependencies:
+
+npm install
+
+
+Create a .env.local file and add the following variables:
+
+STRIPE_SECRET_KEY=sk_test_your_stripe_secret_key
+STRIPE_WEBHOOK_SECRET=whsec_your_webhook_secret
+NEXT_PUBLIC_SUPABASE_URL=https://your-project.supabase.co
+NEXT_PUBLIC_SUPABASE_ANON_KEY=your_supabase_anon_key
+NEXT_PUBLIC_BASE_URL=http://localhost:3000
+NEXT_PUBLIC_ADMIN_PASSWORD=Liberia@26
+
+
+Run the development server:
+
+npm run dev
+
+
+Open your browser and go to:
+
+http://localhost:3000
+
+Project Structure
+├── app/                 Next.js App Router
+│   ├── admin/           Admin dashboard
+│   ├── api/             API routes
+│   ├── checkout/        Payment page
+│   ├── stream/          Live stream viewer
+│   └── success/         Payment confirmation
+├── components/          Reusable UI components
+├── lib/                 Utilities and configuration
+├── supabase/            Database migrations
+└── hooks/               Custom React hooks
+
+Key Pages
+
+Homepage (/)
+Displays the event details and ticket purchase option.
+
+Checkout (/checkout)
+Handles the payment process.
+
+Stream (/stream?token=xxx)
+The page where users watch the live concert after purchasing access.
+
+Success (/success)
+Confirms that a payment has been completed successfully.
+
+Admin (/admin)
+Dashboard used to manage the event and monitor activity.
+
+Configuration
+
+Concert details can be updated in:
+
+lib/concert-config.ts
+
+
+From there you can change:
+
+Event name and artist
+
+Date and venue
+
+Ticket price
+
+Description and SEO metadata
+
+Database Structure
+
+The application uses three main tables in Supabase:
+
+purchases – stores customer purchase records
+
+token_usage – tracks how access tokens are used
+
+stream_settings – controls the status of the live stream
+
+Deployment
+
+The easiest way to deploy the application is with Vercel.
+
+Steps:
+
+Connect the repository from GitHub
+
+Add environment variables in the Vercel dashboard
+
+Deploy automatically whenever changes are pushed
+
+Manual deployment:
+
 npm run build
 npm start
-```
 
-## 📊 Analytics
+Analytics
 
-Vercel Analytics is integrated to track:
-- Page views and user sessions
-- Geographic data
-- Device information
-- Performance metrics
+The project integrates Vercel Analytics to monitor:
 
-## 🔒 Security Features
+Page views
 
-- Row Level Security (RLS) on all database tables
-- Token-based authentication for stream access
-- One-time use tokens prevent sharing
-- IP and user agent tracking
-- Stripe webhook verification
+User sessions
 
-## 🤝 Contributing
+Device types
 
-1. Fork the repository
-2. Create a feature branch
-3. Make your changes
-4. Submit a pull request
+Geographic traffic
 
-## 📄 License
+Performance metrics
 
-This project is licensed under the MIT License.
+Security
 
-## 🇱🇷 About
+Security is an important part of the platform.
 
-**Liberia First, Liberia Last!** 
+Measures include:
 
-This platform celebrates Liberian culture and connects the diaspora community through music and technology. Built with love for the Liberian community worldwide.
+Row Level Security (RLS) on database tables
 
----
+Token-based authentication for stream access
 
-**Built with ❤️ for the Liberian Diaspora**
+One-time tokens to prevent sharing
+
+Stripe webhook verification
+
+IP and device tracking
+
+About the Project
+
+Liberia Events was built to help connect Liberian artists with their global audience. Many members of the diaspora cannot attend concerts in person, and this platform provides a simple way for them to still be part of those experiences online.
